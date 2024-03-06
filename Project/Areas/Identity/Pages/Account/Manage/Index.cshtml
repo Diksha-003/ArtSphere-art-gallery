@@ -1,0 +1,91 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h3 class="text-center mb-4">@ViewData["Title"]</h3>
+            <partial name="_StatusMessage" for="StatusMessage" />
+
+            <form id="profile-form" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label class="form-label">Username:</label>
+                    <input asp-for="Username" class="form-control" disabled />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Phone Number:</label>
+                    <input asp-for="Input.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+            </form>
+        </div>
+
+        <div class="col-md-8 mt-5">
+            @if (User.IsInRole("Artist"))
+            {
+                <h4 class="text-center mb-4">Upload Arts</h4>
+                <form id="image-upload-form" method="post" enctype="multipart/form-data" asp-page-handler="UploadImage">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="image">Select Image:</label>
+                        <input type="file" name="image" accept="image/*" class="form-control-file" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="imageDescription">Art Description:</label>
+                        <input type="text" name="imageDescription" class="form-control" required />
+                    </div>
+
+                    <button id="upload-image-button" type="submit" class="btn btn-primary w-100">Upload Image</button>
+                </form>
+            }
+
+            @if (User.IsInRole("Admin"))
+            {
+                <h4 class="text-center mb-4">Add Exhibition</h4>
+                <form id="add-exhibition-form" method="post" enctype="multipart/form-data" asp-page-handler="AddExhibition">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Title:</label>
+                        <input asp-for="Exhibition.Title" class="form-control" required />
+                        <span asp-validation-for="Exhibition.Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Description:</label>
+                        <input asp-for="Exhibition.Description" class="form-control" required />
+                        <span asp-validation-for="Exhibition.Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Venue:</label>
+                        <input asp-for="Exhibition.Venue" class="form-control" required />
+                        <span asp-validation-for="Exhibition.Venue" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="exhibitionImage">Select Exhibition Image:</label>
+                        <input type="file" name="exhibitionImage" accept="image/*" class="form-control-file" required />
+                    </div>
+
+                    <button id="add-exhibition-button" type="submit" class="btn btn-primary w-100">Add Exhibition</button>
+                </form>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

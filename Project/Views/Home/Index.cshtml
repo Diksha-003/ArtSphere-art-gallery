@@ -1,0 +1,253 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .carousel-item img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    .card {
+        margin-top: 20px;
+    }
+    .img{
+        width: 100%;
+        height: 50vh;
+    }
+</style>
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://cdn.pixabay.com/photo/2017/11/12/22/50/exhibition-2944064_1280.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2014/06/04/16/40/exhibition-362163_1280.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.pixabay.com/photo/2019/05/31/13/35/art-gallery-4242219_1280.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<h1 class="text-center mt-5 mb-2">Popular Arts</h1>
+<h6 class="text-center mb-5">Welcome to the Art-Sphere. Enjoy this magical world of art, masterpieces, and amazing collections! We display, borrow, and collect artworks from around the world</h6>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2017/08/30/12/45/girl-2696947_1280.jpg" class=" img card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Abstract Fusion</h5>
+                    <p class="card-text">Abstract and contemporary artwork.</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2013/01/05/21/02/art-74050_640.jpg" class=" img card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Ethereal Portraits</h5>
+                    <p class="card-text">Capturing the essence of individuals.</p>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2019/05/04/15/24/woman-4178302_640.jpg" class=" img card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Expressive Emotions</h5>
+                    <p class="card-text">Artistic expression and emotion.</p>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+.wrapper{
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .box{
+  background: #fff;
+  width: calc(33% - 10px);
+  padding: 25px;
+  border-radius: 3px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+}
+.wrapper .box i.quote{
+  font-size: 20px;
+  color: #17a2b8;
+}
+.wrapper .box .content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.box .info .name{
+  font-weight: 600;
+  font-size: 17px;
+}
+.box .info .job{
+  font-size: 16px;
+  font-weight: 500;
+  color: #17a2b8;
+}
+.box .info .stars{
+  margin-top: 2px;
+}
+.box .info .stars i{
+  color: #17a2b8;
+}
+.box .content .image{
+  height: 75px;
+  width: 75px;
+  padding: 3px;
+  background: #17a2b8;
+  border-radius: 50%;
+}
+.content .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.box:hover .content .image img{
+  border-color: #fff;
+}
+</style>
+<section id="about" class="about-section mt-5 mb-3">
+    <div class="container">
+        <h2 class="section-heading text-center mb-5">Find Art You Love</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about-img">
+                    <img src="~/NewFolder/Founder/Hybrid-Homepage-RW-Prog-large.jpg" alt="" class="hover-effect" style="width: 100%; max-width: 600px; height: auto;" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="about-text text-center mt-5">
+                    <p>
+                        "At Art-Sphere, we make it our mission to help you discover and buy from the best emerging artists around the world. Whether you’re looking to discover a new artist, add a statement piece to your home, or commemorate an important life event, Saatchi Art is your portal to thousands of original works by today’s top artists."
+                    </p>
+                    <img src="~/NewFolder/Founder/w-sig-black.png" alt="" style="width: 100%; max-width: 600px; height: auto;" />
+                    <p>Chief Curator & VP, Art Advisory</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<h2 class="section-heading text-center mb-5 mt-5">Art Gallery Reviews!</h2>
+<div class="wrapper mt-5">
+    <div class="box">
+        <i class="fas fa-quote-left quote"></i>
+        <p>The art gallery is a hidden gem! I love the way each piece tells a different story, and the atmosphere inside is perfect for immersing oneself in the world of art.</p>
+        <div class="content">
+            <div class="info">
+                <div class="name">Sikha Sharma</div>
+                <div class="job">Designer | Developer</div>
+            </div>
+            <div class="image">
+                <img src="~/NewFolder/Founder/sikha.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <i class="fas fa-quote-left quote"></i>
+        <p>Attending exhibitions at this gallery is always a delight. The curation is excellent, showcasing a variety of styles and mediums. It's a haven for art enthusiasts.</p>
+        <div class="content">
+            <div class="info">
+                <div class="name">Sonal Kapoor</div>
+                <div class="job">YouTuber | Blogger</div>
+            </div>
+            <div class="image">
+                <img src="~/NewFolder/Founder/sona;.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <i class="fas fa-quote-left  quote"></i>
+        <p>I recently discovered this gallery, and I'm impressed by its dedication to showcasing emerging artists. It's become my go-to place for discovering new talents.</p>
+        <div class="content">
+            <div class="info">
+                <div class="name">Shilpa Singh</div>
+                <div class="job">Freelancer | Advertiser</div>
+            </div>
+            <div class="image">
+                <img src="~/NewFolder/Founder/shilpa.webp" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="box mt-5">
+        <i class="fas fa-quote-left quote"></i>
+        <p>The art pieces in this gallery evoke a range of emotions. The blend of colors and themes creates a mesmerizing experience. It's a perfect spot to appreciate the beauty of artistic expression beauty of artistic expression.</p>
+        <div class="content">
+            <div class="info">
+                <div class="name">Rahul Mehta</div>
+                <div class="job">Art Critic | Writer</div>
+            </div>
+            <div class="image">
+                <img src="https://images.newindianexpress.com/uploads/user/imagelibrary/2023/12/11/w1200X800/Rahul_Ravi.JPG" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="box mt-5">
+        <i class="fas fa-quote-left quote"></i>
+        <p>Visiting this gallery is like stepping into a world of creativity. The diverse range of artworks stimulates thought and appreciation for different forms of art. Kudos to the curators for maintaining such a high standard!</p>
+        <div class="content">
+            <div class="info">
+                <div class="name">Ananya Das</div>
+                <div class="job">Art Historian | Curator</div>
+            </div>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrTj6l8fdoXRsdZP_OlRhOJw_bi-WMg1cz7Q&usqp=CAU" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="box mt-5">
+        <i class="fas fa-quote-left quote"></i>
+        <p>This gallery is a source of inspiration. The thought-provoking exhibits challenge conventional perspectives and ignite a passion for the arts. A must-visit for anyone seeking a unique and enriching cultural experience.</p>
+        <div class="content">
+            <div class="info">
+                <div class="name">Rahul Singh</div>
+                <div class="job">Art Educator | Photographer</div>
+            </div>
+            <div class="image">
+                <img src="https://www.gngmodels.com/wp-content/uploads/2021/08/1PB3852-a-a.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+</div>
+@section Scripts {
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pzjw8Y+ua/cYflJbMEf8gChq8z4SAc8MTFR9HbcBOfWJbG0AiQepHsbJ61MR1SkX"
+            crossorigin="anonymous"></script>
+}

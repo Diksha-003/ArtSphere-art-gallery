@@ -1,0 +1,62 @@
+﻿@model List<Project.DTO.UserView>
+
+<h2>All Users</h2>
+
+<div class="d-flex justify-content-between mb-2">
+    <div>
+        <label for="roleFilter">Filter By Role:</label>
+        <select id="roleFilter" class="form-control" onchange="filterTableByRole()">
+            <option value="all">All</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="artist">Artist</option>
+        </select>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr class="user-row @user.Role.ToLower()">
+                <td>@user.Id</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+                <td>@string.Join(", ", user.Role)</td>
+                <td>
+                    <a asp-action="UserDetails" asp-route-id="@user.Id" class="btn btn-outline-secondary">Details</a>
+                    <a asp-action="DeleteUser" asp-route-id="@user.Id" class="btn btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function filterTableByRole() {
+        var selectedRole = document.getElementById("roleFilter").value;
+        var rows = document.getElementsByClassName("user-row");
+
+        for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var rowRole = row.classList[1]; 
+
+            if (selectedRole === "all" || rowRole === selectedRole) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    }
+</script>

@@ -1,0 +1,36 @@
+﻿@model Project.DTO.UserView
+
+<h2>Create User</h2>
+
+<form asp-action="CreateUser" method="post">
+    <div class="form-horizontal">
+        <h4>UserView</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="FirstName" class="control-label"></label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName" class="control-label"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-outline-primary" />
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="GetAllUsers" class="btn btn-outline-success">Back to List</a>
+</div>
